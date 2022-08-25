@@ -11,12 +11,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'QR Scanner',
-      initialRoute: 'Home',
+      initialRoute: 'home',
       routes: {
         'home': ( _ ) => HomePage(),
         'mapa': ( _ ) => MapaPage(),
       },
-      
     );
   }
 }
