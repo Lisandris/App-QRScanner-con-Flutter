@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
-class CustomNavigatorBar extends StatelessWidget {
-  const CustomNavigatorBar({Key? key}) : super(key: key);
+class CustomNavigationBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +16,6 @@ class CustomNavigatorBar extends StatelessWidget {
           icon: Icon ( Icons.compass_calibration_outlined),
           label: 'Direcciones',
         ),
-
       ],
     );
   }

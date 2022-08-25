@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class ScanButton
  extends StatelessWidget {
-  const ScanButton
+   ScanButton
   ({Key? key}) : super(key: key);
 
   @override

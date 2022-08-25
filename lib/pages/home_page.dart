@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:qr_scanner/widgets/custom_navigatorbar.dart';
+import 'package:qr_scanner/widgets/custom_navigationbar.dart';
 import 'package:qr_scanner/widgets/scan_button.dart';
 
 
 class HomePage extends StatelessWidget {
-  const HomePage({Key? key}) : super(key: key);
-
 
   @override
   Widget build(BuildContext context) {
@@ -23,10 +21,9 @@ class HomePage extends StatelessWidget {
       body: Center(
         child: Text('Home page'),
      ),
-     bottomNavigationBar: CustomNavigatorBar(),
+     bottomNavigationBar: CustomNavigationBar(),
      floatingActionButton: ScanButton(),
      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-     
    );
   }
 }
