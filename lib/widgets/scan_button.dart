@@ -10,12 +10,17 @@ class ScanButton
   Widget build(BuildContext context) {
     return FloatingActionButton(
       elevation: 0,
-      child: const Icon( Icons.filter_center_focus),
+      child: Icon( Icons.filter_center_focus),
       onPressed: () async {
 
-        String barcodeScanRes =  await FlutterBarcodeScanner.scanBarcode(
-          '#ff6666', 'Cancel', true, ScanMode.QR
-        );
+        // String barcodeScanRes =  await FlutterBarcodeScanner.scanBarcode(
+        //   '#ff6666', 'Cancelar', false, ScanMode.QR
+        // );
+        final barcodeScanRes = ' https://healthybelleza.com';
+       
+       print( 'lisa: $barcodeScanRes' );
+
+       
       }
     );
   }
