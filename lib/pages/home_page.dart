@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:qr_scanner/pages/direcciones_page.dart';
 import 'package:qr_scanner/pages/mapas_page.dart';
+import 'package:qr_scanner/providers/db_provider.dart';
 import 'package:qr_scanner/providers/ui_providers.dart';
 import 'package:qr_scanner/widgets/custom_navigationbar.dart';
 import 'package:qr_scanner/widgets/scan_button.dart';
@@ -42,6 +43,8 @@ class _HomePageBody extends StatelessWidget {
       // Cambiar para mostrar la pag respectiva
       final currentIndex = uiProvider.selectedMenuOpt;
       
+      // TODO temporal leer la base de datos
+      DBProvider.db.database;
 
       switch( currentIndex ) {
         
