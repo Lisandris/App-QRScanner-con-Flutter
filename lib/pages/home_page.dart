@@ -47,7 +47,7 @@ Widget build(BuildContext context) {
       //  final tempscan = new ScanModel(valor: 'https://healhybelleza.com/'); 
       //  el new es opcional
       // accionames el metodo nuevoScan para insertarlo en la base de datos
-      // DBProvider.db.getTodosLosScans().then((scan) => print('lisa $scan')); 
+      // DBProvider.db.deleteAllScans().then( print); 
       
 
       switch( currentIndex ) {
