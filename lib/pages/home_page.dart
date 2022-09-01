@@ -35,7 +35,7 @@ class HomePage extends StatelessWidget {
 class _HomePageBody extends StatelessWidget {
 
   @override
-  Widget build(BuildContext context) {
+Widget build(BuildContext context) {
 
       // Obtener el selected menu opt
       final uiProvider = Provider.of<UiProvider>(context);
@@ -44,7 +44,11 @@ class _HomePageBody extends StatelessWidget {
       final currentIndex = uiProvider.selectedMenuOpt;
       
       // TODO temporal leer la base de datos
-      DBProvider.db.database;
+      //  final tempScan = new ScanModel(valor: 'https://healhybelleza.com/'); 
+      //  el new es opcional
+      // accionames el metodo nuevoScan para insertarlo en la base de datos
+      // DBProvider.db.getTodosLosScans().then((scan) => print('lisa $scan')); 
+      
 
       switch( currentIndex ) {
         
