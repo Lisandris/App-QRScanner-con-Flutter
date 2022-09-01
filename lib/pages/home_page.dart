@@ -44,7 +44,7 @@ Widget build(BuildContext context) {
       final currentIndex = uiProvider.selectedMenuOpt;
       
       // TODO temporal leer la base de datos
-      //  final tempScan = new ScanModel(valor: 'https://healhybelleza.com/'); 
+      //  final tempscan = new ScanModel(valor: 'https://healhybelleza.com/'); 
       //  el new es opcional
       // accionames el metodo nuevoScan para insertarlo en la base de datos
       // DBProvider.db.getTodosLosScans().then((scan) => print('lisa $scan')); 
