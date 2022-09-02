@@ -40,9 +40,8 @@ class ScanListProvider extends ChangeNotifier{
     notifyListeners(); /* Indica que todos los scans estan vacios */
   }
 
-  borrarScanPorId(int id ) async {
+  borrarScanPorId(int? id ) async {
     await DBProvider.db.deleteScan(id);
-    this.cagarScansPorTipo( this.tipoSeleccionado);
   }
 
 
