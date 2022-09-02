@@ -20,5 +20,30 @@ class ScanListProvider extends ChangeNotifier{
     }
   }
 
+  // Esta asociado a la interfas de usuario
+  cargarScans() async {
+    final scans = await DBProvider.db.getTodosLosScans();
+    this.scans = [...scans!]; /* para crear un nuevo listado */
+    notifyListeners(); /* para actualizar la pantalla */
+  }
+
+  cagarScansPorTipo ( String tipo ) async {
+    final scans = await DBProvider.db.getScansPorTipo(tipo); /* se encarga de hacer las interacciones con la db */
+    this.scans = [...scans!];
+    this.tipoSeleccionado = tipo; /*  El tipo que recibe como argumento */
+    notifyListeners();
+  }
+
+  borrarTodos() async{
+    await DBProvider.db.deleteAllScans();
+    this.scans = [];
+    notifyListeners(); /* Indica que todos los scans estan vacios */
+  }
+
+  borrarScanPorId(int id ) async {
+    await DBProvider.db.deleteScan(id);
+    this.cagarScansPorTipo( this.tipoSeleccionado);
+  }
+
 
 }
