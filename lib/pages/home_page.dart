@@ -20,7 +20,11 @@ class HomePage extends StatelessWidget {
         actions: [
           IconButton(
             icon: const Icon( Icons.delete_forever_rounded),
-            onPressed: (){ }
+            onPressed: (){ 
+
+              Provider.of<ScanListProvider> ( context, listen: false).borrarTodos();
+
+            }
           )
         ],
       ),
