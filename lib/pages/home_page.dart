@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:qr_scanner/pages/direcciones_page.dart';
 import 'package:qr_scanner/pages/mapas_page.dart';
 import 'package:qr_scanner/providers/db_provider.dart';
+import 'package:qr_scanner/providers/scan_list_provider.dart';
 import 'package:qr_scanner/providers/ui_providers.dart';
 import 'package:qr_scanner/widgets/custom_navigationbar.dart';
 import 'package:qr_scanner/widgets/scan_button.dart';
@@ -49,17 +50,21 @@ Widget build(BuildContext context) {
       // accionames el metodo nuevoScan para insertarlo en la base de datos
       // DBProvider.db.deleteAllScans().then( print); 
       
+      // Usar el ScanListProvider
+      final scanListProvider = Provider.of<ScanListProvider>(context, listen: false );
 
       switch( currentIndex ) {
         
         case 0:
-          return MapasPage();
+        scanListProvider.cagarScansPorTipo('geo');
+          return const MapasPage();
 
         case 1:
-            return DireccionesPage();
+        scanListProvider.cagarScansPorTipo('http');
+            return const DireccionesPage();
 
         default:
-          return MapasPage();
+          return const MapasPage();
       }
   }
 }
