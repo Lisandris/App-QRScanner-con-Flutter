@@ -18,7 +18,7 @@ class HomePage extends StatelessWidget {
         title: Text( 'Historial' ),
         actions: [
           IconButton(
-            icon: Icon( Icons.delete_forever_rounded),
+            icon: const Icon( Icons.delete_forever_rounded),
             onPressed: (){ }
           )
         ],

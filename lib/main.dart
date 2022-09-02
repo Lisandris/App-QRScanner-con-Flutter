@@ -29,8 +29,9 @@ class MyApp extends StatelessWidget {
           'mapa': ( _ ) => MapaPage(),
         },
         theme: ThemeData(  /* Tema principal */
+          primaryColor: const Color.fromARGB(255, 184, 8, 66),
           appBarTheme: const AppBarTheme(
-            color: Color.fromARGB(255, 184, 8, 66)
+           color: Color.fromARGB(255, 184, 8, 66)
           ),
           bottomNavigationBarTheme: const BottomNavigationBarThemeData(
             selectedItemColor:Color.fromARGB(255, 184, 8, 66),
