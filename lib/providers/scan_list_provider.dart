@@ -6,7 +6,7 @@ class ScanListProvider extends ChangeNotifier{
   List<ScanModel> scans = [];
   String tipoSeleccionado = 'http';
 
-  nuevoScan( String valor ) async {
+  Future<ScanModel> nuevoScan( String valor ) async {
 
     // creando la instancia del nuevo scan
     final nuevoScan = new ScanModel(valor: valor);
@@ -18,6 +18,8 @@ class ScanListProvider extends ChangeNotifier{
       scans.add(nuevoScan);
       notifyListeners();
     }
+
+    return nuevoScan;
   }
 
   // Esta asociado a la interfas de usuario
