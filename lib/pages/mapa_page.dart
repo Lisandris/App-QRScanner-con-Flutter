@@ -26,6 +26,13 @@ Completer<GoogleMapController> _controller = Completer();
       tilt: 50  /* grado de inclinacion */
     );
 
+    // Marcadores
+    Set<Marker> markers = new Set<Marker>();
+    markers.add(new Marker(
+      markerId: MarkerId('geo-location'),
+      position: scan.getLatLng()
+    ));
+
     
     return Scaffold(
       appBar: AppBar(
@@ -34,6 +41,7 @@ Completer<GoogleMapController> _controller = Completer();
       body: GoogleMap(
         myLocationButtonEnabled: false,
         mapType: MapType.normal,
+        markers: markers,
         initialCameraPosition: puntoInicial,
         onMapCreated: (GoogleMapController controller) {
           _controller.complete(controller);
