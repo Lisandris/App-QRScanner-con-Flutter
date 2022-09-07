@@ -19,12 +19,9 @@ class ScanButton
       child: const Icon( Icons.filter_center_focus),
       onPressed: () async {
 
-        // String barcodeScanRes =  await FlutterBarcodeScanner.scanBarcode(
-        //   '#ff6666', 'Cancelar', false, ScanMode.QR
-        // );
-
+        String barcodeScanRes =  await FlutterBarcodeScanner.scanBarcode('#ff6666', 'Cancelar', false, ScanMode.QR);
         // final barcodeScanRes = 'https://healthybelleza.com';
-        final barcodeScanRes = 'geo:10.1913496,-64.6833429';
+        // final barcodeScanRes = 'geo:10.1913496,-64.6833429';
        
         if ( barcodeScanRes == '-1')
         return;
