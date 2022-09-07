@@ -14,6 +14,7 @@ class _MapaPageState extends State<MapaPage> {
 
   // con el controller podemos editar camara y demas
 Completer<GoogleMapController> _controller = Completer();
+MapType mapType = MapType.normal;
 
   @override
   Widget build(BuildContext context) {
@@ -58,7 +59,7 @@ Completer<GoogleMapController> _controller = Completer();
       body: GoogleMap(
         zoomControlsEnabled: false,
         myLocationButtonEnabled: false,
-        mapType: MapType.normal,
+        mapType: mapType,
         markers: markers,
         initialCameraPosition: puntoInicial,
         onMapCreated: (GoogleMapController controller) {
@@ -66,9 +67,16 @@ Completer<GoogleMapController> _controller = Completer();
         },
       ),
       floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.layers ),
+        child: const Icon(Icons.layers ),
         onPressed: (){
-          
+
+          if (mapType == MapType.normal ) {
+            mapType = MapType.satellite;
+          } else {
+            mapType = MapType.normal;
+          }
+
+          setState(() {}); /* para llamar la instruccion anterior */
         }
        ),
    );
