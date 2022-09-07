@@ -22,7 +22,7 @@ Completer<GoogleMapController> _controller = Completer();
     
     final CameraPosition puntoInicial = CameraPosition(
       target: scan!.getLatLng(),
-      zoom: 17.5,
+      zoom: 18,
       tilt: 50  /* grado de inclinacion */
     );
 
@@ -36,9 +36,27 @@ Completer<GoogleMapController> _controller = Completer();
     
     return Scaffold(
       appBar: AppBar(
-        title: Text('Mapa'),
+        title: const Text('Mapa'),
+        actions: [
+          IconButton(
+            icon: Icon( Icons.location_on_outlined),
+            onPressed: () async {
+              final GoogleMapController controller = await _controller.future;
+               controller.animateCamera(
+                  CameraUpdate.newCameraPosition(
+                    CameraPosition(
+                      target: scan.getLatLng(),
+                      zoom: 18,
+                      tilt: 50
+                    )
+                  )
+                );
+            }
+          )
+        ],
       ),
       body: GoogleMap(
+        zoomControlsEnabled: false,
         myLocationButtonEnabled: false,
         mapType: MapType.normal,
         markers: markers,
@@ -47,6 +65,12 @@ Completer<GoogleMapController> _controller = Completer();
           _controller.complete(controller);
         },
       ),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.layers ),
+        onPressed: (){
+          
+        }
+       ),
    );
   }
 }
